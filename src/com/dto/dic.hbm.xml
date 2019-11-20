@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!--表映射文件 -->
+	<class name="com.qian.fang.ho.dic.table.dto.DicTableDTO" table="T_HO_DICTABLE" optimistic-lock="version">
+		<id name="tablecode" column="TABLECODE" type="string">
+			<generator class="assigned" />
+		</id>
+		<!-- 乐观锁 -->
+		<version column="version" name="version" type="java.lang.Integer" />
+		<property name="name" column="NAME" type="string" not-null="true" />
+		<property name="tabletype" column="TABLETYPE" type="short" not-null="true" />
+		<property name="keycolumn" column="KEYCOLUMN" type="string" />
+		<property name="codecolumn" column="CODECOLUMN" type="string" />
+		<property name="namecolumn" column="NAMECOLUMN" type="string" />
+		<property name="supercolumn" column="SUPERCOLUMN" type="string" />
+		<property name="remark" column="REMARK" type="string" />
+		<property name="isleafcolumn" column="ISLEAFCOLUMN" type="string" />
+		<property name="levelnocolumn" column="LEVELNOCOLUMN" type="string" />
+		<property name="statuscolumn" column="STATUSCOLUMN" type="string" />
+		<property name="startdatecolumn" column="STARTDATECOLUMN" type="string" />
+		<property name="enddatecolumn" column="ENDDATECOLUMN" type="string" />
+		<property name="guidcolumn" column="GUIDCOLUMN" type="string" />
+		<property name="guid" column="GUID" type="string" />
+		<set name="columns" inverse="true" lazy="false" cascade="delete">
+			<key column="TABLECODE" />
+			<one-to-many class="com.qian.fang.dic.dic.column.dto.ColumnDTO" />
+		</set>
+	</class>
+</hibernate-mapping>
