@@ -2,29 +2,27 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<!--表映射文件 -->
-	<class name="com.qian.fang.ho.dic.table.dto.DicTableDTO" table="T_HO_DICTABLE" optimistic-lock="version">
-		<id name="tablecode" column="TABLECODE" type="string">
+	<class name="com.dto.DicTableDTO" table="T_HO_DICTABLE" optimistic-lock="version">
+		<id name="tablecode" column="tablecode" type="string" length="32">
 			<generator class="assigned" />
 		</id>
 		<!-- 乐观锁 -->
-		<version column="version" name="version" type="java.lang.Integer" />
-		<property name="name" column="NAME" type="string" not-null="true" />
-		<property name="tabletype" column="TABLETYPE" type="short" not-null="true" />
-		<property name="keycolumn" column="KEYCOLUMN" type="string" />
-		<property name="codecolumn" column="CODECOLUMN" type="string" />
-		<property name="namecolumn" column="NAMECOLUMN" type="string" />
-		<property name="supercolumn" column="SUPERCOLUMN" type="string" />
-		<property name="remark" column="REMARK" type="string" />
-		<property name="isleafcolumn" column="ISLEAFCOLUMN" type="string" />
-		<property name="levelnocolumn" column="LEVELNOCOLUMN" type="string" />
-		<property name="statuscolumn" column="STATUSCOLUMN" type="string" />
-		<property name="startdatecolumn" column="STARTDATECOLUMN" type="string" />
-		<property name="enddatecolumn" column="ENDDATECOLUMN" type="string" />
-		<property name="guidcolumn" column="GUIDCOLUMN" type="string" />
-		<property name="guid" column="GUID" type="string" />
-		<set name="columns" inverse="true" lazy="false" cascade="delete">
-			<key column="TABLECODE" />
-			<one-to-many class="com.qian.fang.dic.dic.column.dto.ColumnDTO" />
-		</set>
+		<version column="version" name="version" type="short" />
+		<property name="name" column="name" type="string" not-null="true" unique="true" length="50"/>
+		<property name="tabletype" column="tabletype" type="short" not-null="true" />
+		<property name="keycolumn" column="keycolumn" type="string" length="32" />
+		<property name="codecolumn" column="codecolumn" type="string" length="32" />
+		<property name="namecolumn" column="namecolumn" type="string" length="32" />
+		<property name="supercolumn" column="supercolumn" type="string" length="32" />
+		<property name="isleafcolumn" column="isleafcolumn" type="string" length="32" />
+		<property name="levelnocolumn" column="levelnocolumn" type="string" length="32" />
+		<property name="statuscolumn" column="statuscolumn" type="string" length="32" />
+		<property name="startdatecolumn" column="startdatecolumn" type="string" length="32" />
+		<property name="enddatecolumn" column="enddatecolumn" type="string" length="32" />
+		<property name="guidcolumn" column="guidcolumn" type="string" length="32" />
+		<property name="guid" column="guid" type="string" not-null="true" length="32" unique="true" />
+		<property name="remark" column="remark" type="string" length="32" />
+		<property name="govid" column="govid" type="string" not-null="true" length="6" />
+		<property name="govyear" column="govyear" type="short" not-null="true" length="4" />
 	</class>
 </hibernate-mapping>

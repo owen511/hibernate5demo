@@ -9,8 +9,6 @@
 
 package com.dto;
 
-import java.io.Serializable;
-
 /**
  * 表定义通用DTO类.
  * @ClassName: DicTableDTO
@@ -18,7 +16,7 @@ import java.io.Serializable;
  * @author owen 于 2019年11月15日 下午1:59:27
  */
 
-public class DicTableDTO implements Serializable, Cloneable{
+public class DicTableDTO extends CommonDTO{
 
 	/**
 	 * @Fields serialVersionUID : Description
@@ -95,6 +93,10 @@ public class DicTableDTO implements Serializable, Cloneable{
 	 * 表版本号.
 	 */
 	private int version;
+	
+	public DicTableDTO() {
+		
+	}
 
 	/**
 	 * @return tablecode
