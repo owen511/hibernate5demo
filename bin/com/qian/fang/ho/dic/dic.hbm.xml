@@ -1,0 +1,28 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!--表映射文件 -->
+	<class name="com.qian.fang.ho.dic.dto.DicTableDTO" table="T_HO_DICTABLE" optimistic-lock="version">
+		<id name="guid" column="guid" type="string" length="32">
+			<generator class="uuid" />
+		</id>
+		<!-- 乐观锁 -->
+		<version column="version" name="version" type="short" />
+		<property name="tablecode" column="tablecode" type="string" not-null="true" unique="true" length="32"/>
+		<property name="name" column="name" type="string" not-null="true" unique="true" length="50"/>
+		<property name="tabletype" column="tabletype" type="int" not-null="true" />
+		<property name="keycolumn" column="keycolumn" type="string" length="32" />
+		<property name="codecolumn" column="codecolumn" type="string" length="32" />
+		<property name="namecolumn" column="namecolumn" type="string" length="32" />
+		<property name="supercolumn" column="supercolumn" type="string" length="32" />
+		<property name="isleafcolumn" column="isleafcolumn" type="string" length="32" />
+		<property name="levelnocolumn" column="levelnocolumn" type="string" length="32" />
+		<property name="statuscolumn" column="statuscolumn" type="string" length="32" />
+		<property name="startdatecolumn" column="startdatecolumn" type="string" length="32" />
+		<property name="enddatecolumn" column="enddatecolumn" type="string" length="32" />
+		<property name="guidcolumn" column="guidcolumn" type="string" length="32" />
+		<property name="remark" column="remark" type="string" length="32" />
+		<property name="govid" column="govid" type="string" not-null="true" length="6" />
+		<property name="govyear" column="govyear" type="short" not-null="true" length="4" />
+	</class>
+</hibernate-mapping>
