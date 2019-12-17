@@ -92,7 +92,7 @@ public class DicTableDTO extends CommonDTO{
 	/**
 	 * 表版本号.
 	 */
-	private int version;
+	private short version;
 	
 	public DicTableDTO() {
 		
@@ -283,14 +283,14 @@ public class DicTableDTO extends CommonDTO{
 	/**
 	 * @return version
 	 */
-	public int getVersion() {
+	public short getVersion() {
 		return version;
 	}
 
 	/**
 	 * @param version 要设置的 version
 	 */
-	public void setVersion(int version) {
+	public void setVersion(short version) {
 		this.version = version;
 	}
 

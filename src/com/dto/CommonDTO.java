@@ -30,10 +30,10 @@ public class CommonDTO implements Serializable, Cloneable {
 	private String guid;
 	
 	//财政年度
-	private int govyear;
+	private short govyear;
 	
 	//财政区划
-	private int govid;
+	private String govid;
 	
 	//备注
 	private String remark;
@@ -55,28 +55,28 @@ public class CommonDTO implements Serializable, Cloneable {
 	/**
 	 * @return govyear
 	 */
-	public int getGovyear() {
+	public short getGovyear() {
 		return govyear;
 	}
 
 	/**
 	 * @param govyear 要设置的 govyear
 	 */
-	public void setGovyear(int govyear) {
+	public void setGovyear(short govyear) {
 		this.govyear = govyear;
 	}
 
 	/**
 	 * @return govid
 	 */
-	public int getGovid() {
+	public String getGovid() {
 		return govid;
 	}
 
 	/**
 	 * @param govid 要设置的 govid
 	 */
-	public void setGovid(int govid) {
+	public void setGovid(String govid) {
 		this.govid = govid;
 	}
 

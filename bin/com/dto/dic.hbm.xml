@@ -3,13 +3,14 @@
 <hibernate-mapping>
 	<!--表映射文件 -->
 	<class name="com.dto.DicTableDTO" table="T_HO_DICTABLE" optimistic-lock="version">
-		<id name="tablecode" column="tablecode" type="string" length="32">
-			<generator class="assigned" />
+		<id name="guid" column="guid" type="string" length="32">
+			<generator class="uuid" />
 		</id>
 		<!-- 乐观锁 -->
 		<version column="version" name="version" type="short" />
+		<property name="tablecode" column="tablecode" type="string" not-null="true" unique="true" length="32"/>
 		<property name="name" column="name" type="string" not-null="true" unique="true" length="50"/>
-		<property name="tabletype" column="tabletype" type="short" not-null="true" />
+		<property name="tabletype" column="tabletype" type="int" not-null="true" />
 		<property name="keycolumn" column="keycolumn" type="string" length="32" />
 		<property name="codecolumn" column="codecolumn" type="string" length="32" />
 		<property name="namecolumn" column="namecolumn" type="string" length="32" />
@@ -20,7 +21,6 @@
 		<property name="startdatecolumn" column="startdatecolumn" type="string" length="32" />
 		<property name="enddatecolumn" column="enddatecolumn" type="string" length="32" />
 		<property name="guidcolumn" column="guidcolumn" type="string" length="32" />
-		<property name="guid" column="guid" type="string" not-null="true" length="32" unique="true" />
 		<property name="remark" column="remark" type="string" length="32" />
 		<property name="govid" column="govid" type="string" not-null="true" length="6" />
 		<property name="govyear" column="govyear" type="short" not-null="true" length="4" />
